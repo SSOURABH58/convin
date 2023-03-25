@@ -2,8 +2,10 @@
 //
 import { ADD_HISTORY, GET_HISTORY } from '../types';
 import axios from 'axios';
+import { rootUrl } from './../../utils/urls';
 
-const url = 'http://localhost:3030/history';
+// const url = 'http://localhost:3030/history';
+const url = `${rootUrl}/history`;
 
 export const getHistory = () => async dispatch => {
     const res = await axios.get(url);

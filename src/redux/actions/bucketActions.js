@@ -2,8 +2,10 @@
 // Path: convin\src\redux\actions\bucketActions.js
 import { CREATE_BUCKET, GET_BUCKETS, DELETE_BUCKET, EDIT_BUCKET } from './../types';
 import axios from 'axios';
+import { rootUrl } from './../../utils/urls';
 
-const url = "http://localhost:3030/bucket"
+const url = `${rootUrl}/bucket`
+// const url = "http://localhost:3030/bucket"
 
 export const getBuckets = () => async dispatch => {
     const res = await axios.get(url);

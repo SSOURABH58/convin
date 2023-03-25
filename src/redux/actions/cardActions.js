@@ -1,7 +1,9 @@
 import { CREATE_CARD, DELETE_CARD, EDIT_CARD, GET_CARDS, MOVE_CARD } from './../types';
 import axios from 'axios';
+import { rootUrl } from './../../utils/urls';
 
-const url = "http://localhost:3030/card"
+// const url = "http://localhost:3030/card"\
+const url = `${rootUrl}/card`
 
 export const getCards = () => async dispatch => {
     const res = await axios.get(url);
