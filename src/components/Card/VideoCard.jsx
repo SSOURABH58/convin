@@ -7,10 +7,11 @@ import { CheckOutlined, CloseOutlined, DeleteOutlined, EditOutlined } from '@ant
 import { connect } from 'react-redux';
 import { deleteCard, editCard } from './../../redux/actions/cardActions';
 import Paragraph from 'antd/es/typography/Paragraph';
+import { openModal } from '../../redux/actions/modalActions';
 // import './VideoCard.css'
 
 
-const VideoCard = ({ card }) => {
+const VideoCard = ({ card, openModal }) => {
     const [cardLocal, setCardLocal] = useState(card)
     const [isEditing, setIsEditing] = useState(false)
 
@@ -26,6 +27,10 @@ const VideoCard = ({ card }) => {
 
     const handleDeleteCard = () => {
         deleteCard(cardLocal?.id)
+    }
+
+    const handleLinkClick = () => {
+        openModal(cardLocal)
     }
 
 
@@ -71,7 +76,7 @@ const VideoCard = ({ card }) => {
                 bordered={false}
                 type="text" value={cardLocal.link}
                 onChange={(e) => setCardLocal(state => ({ ...state, link: e.target.value }))} /> :
-                <Paragraph ellipsis={true}>{cardLocal?.link}</Paragraph>}
+                <Paragraph style={{ cursor: "pointer", color: "#69b1ff" }} onClick={handleLinkClick} ellipsis={true}>{cardLocal?.link}</Paragraph>}
 
         </Card>
     )
@@ -83,7 +88,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
     deleteCard,
-    editCard
+    editCard,
+    openModal
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(VideoCard)

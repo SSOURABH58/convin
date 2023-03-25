@@ -12,4 +12,7 @@ export const GET_CARD = 'GET_CARD';
 export const GET_BUCKETS = 'GET_BUCKETS';
 export const GET_CARDS = 'GET_CARDS';
 export const GET_HISTORY = 'GET_HISTORY';
+export const OPEN_MODAL = 'OPEN_MODAL';
+export const CLOSE_MODAL = 'CLOSE_MODAL';
+
 
