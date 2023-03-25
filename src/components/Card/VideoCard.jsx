@@ -11,7 +11,7 @@ import { openModal } from '../../redux/actions/modalActions';
 // import './VideoCard.css'
 
 
-const VideoCard = ({ card, openModal }) => {
+const VideoCard = ({ card, openModal, deleteCard }) => {
     const [cardLocal, setCardLocal] = useState(card)
     const [isEditing, setIsEditing] = useState(false)
 

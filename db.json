@@ -3,44 +3,42 @@
     {
       "name": "Entertainment Videos",
       "id": 1
+    },
+    {
+      "name": "Education Videos",
+      "id": 2
     }
   ],
   "card": [
     {
-      "id": 1,
-      "name": "Video 1",
-      "link": "https://www.youtube.com/watch?v=7e90gBu4pas",
-      "bucket_id": 1
-    },
-    {
-      "id": 2,
-      "name": "Video 2",
-      "link": "https://www.youtube.com/watch?v=7e90gBu4pas",
-      "bucket_id": 1
-    },
-    {
-      "id": 3,
-      "name": "Video 3",
-      "link": "https://www.youtube.com/watch?v=7e90gBu4pas",
-      "bucket_id": 2
-    },
-    {
-      "id": 4,
-      "name": "Video 4",
-      "link": "https://www.youtube.com/watch?v=7e90gBu4pas",
-      "bucket_id": 2
-    },
-    {
-      "name": "Video 10",
-      "link": "link",
-      "bucket_id": 3,
-      "id": 5
-    },
-    {
-      "name": "Copilate4",
+      "name": "CoPilot X",
       "link": "https://www.youtube.com/embed/q1HZj40ZQrM",
-      "bucket_id": 4,
-      "id": 6
+      "bucket_id": 1,
+      "id": 1
+    },
+    {
+      "name": "Bard vs GPT4",
+      "link": "https://www.youtube.com/embed/xW9DJTvB3NI",
+      "bucket_id": 1,
+      "id": 2
+    },
+    {
+      "name": "React",
+      "link": "https://www.youtube.com/embed/1wZoGFF_oi4",
+      "bucket_id": 2,
+      "id": 3
+    },
+    {
+      "name": "Hustlers University",
+      "link": "https://www.youtube.com/embed/EJCPQu2RI-Y",
+      "bucket_id": 2,
+      "id": 4
+    },
+    {
+      "name": "Mumbo",
+      "link": "https://www.youtube.com/embed/rTfxjtSaBPY",
+      "bucket_id": 1,
+      "id": 5
     }
   ],
   "history": [
@@ -92,6 +90,20 @@
       "bucket_id": 4,
       "time": "25/3/2023, 11:44:57 pm",
       "id": 9
+    },
+    {
+      "name": "Hustlers University",
+      "link": "https://www.youtube.com/embed/EJCPQu2RI-Y",
+      "bucket_id": 2,
+      "time": "25/3/2023, 11:56:59 pm",
+      "id": 10
+    },
+    {
+      "name": "Hustlers University",
+      "link": "https://www.youtube.com/embed/EJCPQu2RI-Y",
+      "bucket_id": 2,
+      "time": "25/3/2023, 11:57:40 pm",
+      "id": 11
     }
   ]
 }

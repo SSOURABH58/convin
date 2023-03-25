@@ -81,8 +81,8 @@ const Bucket = ({ bucket, deleteBucket, editBucket, createCard, moveCard, allCar
         >
             <Droppable types={['card']} onDrop={(data) => handleOnDrop(data)}>
 
-                {cards?.map((card, index) => <Draggable data={card.id} type={"card"}>
-                    <VideoCard card={card} index={index} />
+                {cards?.map((card, index) => <Draggable key={card.id} data={card.id} type={"card"}>
+                    <VideoCard card={card} index={card.id} />
                 </Draggable>)}
 
                 <Card
