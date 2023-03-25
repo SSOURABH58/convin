@@ -1,9 +1,6 @@
-//create a page that will display the list of mp3/mp4 links that you have played i.e the card name, the link and the time it was played
-
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { Table, Button } from 'antd';
+import { Table } from 'antd';
 import { getHistory } from '../../redux/actions/historyAction';
 import './History.css';
 

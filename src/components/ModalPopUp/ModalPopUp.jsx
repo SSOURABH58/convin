@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Modal } from 'antd';
 import { connect } from 'react-redux';
 import { closeModal } from '../../redux/actions/modalActions';
@@ -13,7 +13,7 @@ const ModalPopUp = ({ modal, card, closeModal, addHistory }) => {
             const { name, link, bucket_id } = card
             addHistory({ name, link, bucket_id, time })
         }
-    }, [card])
+    }, [card, addHistory])
 
 
 

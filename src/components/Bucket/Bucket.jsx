@@ -13,7 +13,7 @@ const Bucket = ({ bucket, deleteBucket, editBucket, createCard, moveCard, allCar
     const [bucketLocal, setBucketLocal] = useState(bucket);
     const [newCard, setNewCard] = useState({ name: "", link: "" });
 
-    const cards = useMemo(() => allCards?.filter(card => card.bucket_id === bucket.id), [allCards])
+    const cards = useMemo(() => allCards?.filter(card => card.bucket_id === bucket.id), [allCards, bucket])
     console.log("bucket:", bucket, "cards:", cards);
 
     const handleEditBucket = () => {

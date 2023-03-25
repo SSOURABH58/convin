@@ -5,7 +5,7 @@ const initialState = {
     card: null
 }
 
-export default function (state = initialState, action) {
+const modalReducer = (state = initialState, action) => {
     switch (action.type) {
         case OPEN_MODAL:
             return {
@@ -23,5 +23,7 @@ export default function (state = initialState, action) {
             return state
     }
 }
+
+export default modalReducer
 
 
