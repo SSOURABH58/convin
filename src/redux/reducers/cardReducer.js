@@ -1,4 +1,4 @@
-import { CREATE_CARD, EDIT_CARD, DELETE_CARD } from "../types";
+import { CREATE_CARD, EDIT_CARD, DELETE_CARD, GET_CARDS } from "../types";
 
 const initialState = {
     cards: [],
@@ -23,6 +23,12 @@ export default function cardReducer(state = initialState, action) {
                 ...state,
                 cards: state.cards.filter((card) => card.id !== action.payload),
             };
+        case GET_CARDS:
+            return {
+                ...state,
+                cards: action.payload,
+            };
+
         default:
             return state;
     }

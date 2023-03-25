@@ -3,12 +3,15 @@ import React, { useState } from 'react'
 import VideoCard from './../Card/VideoCard'
 import { CheckOutlined, CloseOutlined, DeleteOutlined, EditOutlined } from '@ant-design/icons';
 import { connect } from 'react-redux';
-import { createBucket, deleteBucket, editBucket, getBuckets } from './../../redux/actions/bucketActions';
+import { deleteBucket, editBucket } from './../../redux/actions/bucketActions';
+import { createCard } from './../../redux/actions/cardActions';
 
 
-const Bucket = ({ bucket, createBucket, deleteBucket, editBucket, getBuckets }) => {
+const Bucket = ({ bucket, cards, deleteBucket, editBucket, createCard }) => {
+    console.log("bucket:", bucket, "cards:", cards);
     const [isEditing, setIsEditing,] = useState(false)
     const [bucketLocal, setBucketLocal] = useState(bucket);
+    const [newCard, setNewCard] = useState({ name: "", link: "" });
 
     const handleEditBucket = () => {
         editBucket(bucketLocal);
@@ -24,6 +27,10 @@ const Bucket = ({ bucket, createBucket, deleteBucket, editBucket, getBuckets }) 
         deleteBucket(bucketLocal?.id);
     }
 
+    const handleCreateCard = () => {
+        createCard({ ...newCard, bucket_id: bucketLocal?.id });
+        setNewCard({ name: "", link: "" });
+    }
 
     return (
         <Card
@@ -62,7 +69,35 @@ const Bucket = ({ bucket, createBucket, deleteBucket, editBucket, getBuckets }) 
                 ><DeleteOutlined /></Button>
             </>
             }
-        />
+        >
+            {cards?.map(card => <VideoCard card={card} />)}
+            <Card
+                size='small'
+                style={{
+                    marginBottom: 5
+                }}
+                title={<Input
+                    placeholder='New Card Name ...'
+                    bordered={false}
+                    type="text" value={newCard.name}
+                    onChange={(e) => setNewCard(state => ({ ...state, name: e.target.value }))} />}
+                extra={<Button
+                    type="link"
+                    size='small'
+                    onClick={handleCreateCard}
+                >Add</Button>}
+            >
+                <Input
+                    placeholder='New Video Link ...'
+                    bordered={false}
+                    type="text"
+                    value={newCard.link}
+                    onChange={(e) => setNewCard(state => ({ ...state, link: e.target.value }))}
+                />
+            </Card>
+
+
+        </Card>
     )
 }
 
@@ -75,10 +110,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getBuckets: () => dispatch(getBuckets()),
-        createBucket: (bucket) => dispatch(createBucket(bucket)),
         deleteBucket: (bucket) => dispatch(deleteBucket(bucket)),
         editBucket: (bucket) => dispatch(editBucket(bucket)),
+        createCard: (card) => dispatch(createCard(card)),
     };
 }
 
