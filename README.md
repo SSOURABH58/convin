@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Sourabh Soni Convin assement
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img width="610" alt="image" src="https://user-images.githubusercontent.com/52000724/227735666-c33b35d7-c469-45d7-8d43-8464bd2305bc.png">
 
 ## Available Scripts
 
