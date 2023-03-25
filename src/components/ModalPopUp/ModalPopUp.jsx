@@ -2,8 +2,18 @@ import React, { useState } from 'react'
 import { Modal } from 'antd';
 import { connect } from 'react-redux';
 import { closeModal } from '../../redux/actions/modalActions';
+import { useEffect } from 'react';
+import { addHistory } from '../../redux/actions/historyAction';
 
-const ModalPopUp = ({ modal, card, closeModal }) => {
+const ModalPopUp = ({ modal, card, closeModal, addHistory }) => {
+
+    useEffect(() => {
+        const time = new Date().toLocaleString()
+        if (card) {
+            addHistory({ ...card, time: time })
+        }
+    }, [card])
+
 
 
     return (
@@ -34,7 +44,9 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    addHistory: (history) => dispatch(addHistory(history))
+
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ModalPopUp);

@@ -7,12 +7,14 @@ export const EDIT_BUCKET = 'EDIT_BUCKET';
 export const DELETE_BUCKET = 'DELETE_BUCKET';
 export const MOVE_CARD = 'MOVE_CARD';
 export const PLAY_CARD = 'PLAY_CARD';
-export const DELETE_HISTORY = 'DELETE_HISTORY';
 export const GET_CARD = 'GET_CARD';
 export const GET_BUCKETS = 'GET_BUCKETS';
 export const GET_CARDS = 'GET_CARDS';
-export const GET_HISTORY = 'GET_HISTORY';
 export const OPEN_MODAL = 'OPEN_MODAL';
 export const CLOSE_MODAL = 'CLOSE_MODAL';
+export const GET_HISTORY = 'GET_HISTORY';
+export const DELETE_HISTORY = 'DELETE_HISTORY';
+export const ADD_HISTORY = 'ADD_HISTORY';
+
 
 

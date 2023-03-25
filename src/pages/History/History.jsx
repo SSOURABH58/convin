@@ -2,10 +2,10 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-// import { getHistory } from '../../actions/historyActions';
 import { Link } from 'react-router-dom';
 import { Table, Button } from 'antd';
-// import './History.css';
+import { getHistory } from '../../redux/actions/historyAction';
+import './History.css';
 
 const History = ({ history }) => {
     const columns = [
@@ -29,7 +29,7 @@ const History = ({ history }) => {
     const data = history.map((item, index) => {
         return {
             key: index,
-            cardName: item.cardName,
+            cardName: item.name,
             link: item.link,
             time: item.time,
         };
@@ -38,22 +38,19 @@ const History = ({ history }) => {
     return (
         <div className="History">
             <Table columns={columns} dataSource={data} />
-            <Link to="/">
-                <Button type="primary">Back</Button>
-            </Link>
         </div>
     );
 };
 
 const mapStateToProps = (state) => {
     return {
-        history: state.history,
+        history: state.history.history,
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        // getHistory: () => dispatch(getHistory()),
+        getHistory: () => dispatch(getHistory()),
     };
 };
 

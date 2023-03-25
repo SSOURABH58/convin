@@ -40,5 +40,14 @@
       "bucket_id": 3,
       "id": 5
     }
+  ],
+  "history": [
+    {
+      "id": 3,
+      "name": "Video 3",
+      "link": "https://www.youtube.com/watch?v=7e90gBu4pas",
+      "bucket_id": 2,
+      "time": "25/3/2023, 11:34:40 pm"
+    }
   ]
 }
