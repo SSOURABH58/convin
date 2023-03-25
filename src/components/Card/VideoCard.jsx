@@ -31,9 +31,11 @@ const VideoCard = ({ card }) => {
 
     return (
         <Card
+            hoverable={true}
             size='small'
             style={{
-                marginBottom: 5
+                marginBottom: 5,
+                cursor: "grab"
             }}
             title={isEditing ? <Input
                 placeholder='Card Name ...'

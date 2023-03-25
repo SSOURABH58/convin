@@ -1,4 +1,4 @@
-import { CREATE_CARD, DELETE_CARD, EDIT_CARD, GET_CARDS } from './../types';
+import { CREATE_CARD, DELETE_CARD, EDIT_CARD, GET_CARDS, MOVE_CARD } from './../types';
 import axios from 'axios';
 
 const url = "http://localhost:3030/card"
@@ -40,6 +40,14 @@ export const editCard = (card) => async dispatch => {
     });
 }
 
+export const moveCard = (card) => async dispatch => {
+    const res = await axios.put(`${url}/${card.id}`, card);
+    console.log('moveCard action', res.data);
+    dispatch({
+        type: MOVE_CARD,
+        payload: res.data
+    });
+}
 
 
 
